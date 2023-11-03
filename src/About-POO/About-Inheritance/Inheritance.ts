@@ -1,6 +1,6 @@
 /*eslint no-unused-vars: */
 
-export class Person {
+export abstract class Person {
   constructor(
     public firstName: string,
     public lastName: string,
@@ -16,10 +16,5 @@ export class Person {
     return this.cpf;
   }
 
-  getFullName(): string {
-    return `${this.firstName} ${this.lastName}`;
-  }
+  protected abstract getFullName(): string;
 }
-
-const person1 = new Person('Carlos', 'Silva', 54, '000.000.000-00');
-console.log(person1.getFullName());
